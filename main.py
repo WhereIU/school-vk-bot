@@ -30,9 +30,9 @@ def maling(): #add users n msgs n keyboard
         schedule.run_pending()
         time.sleep(60)
 schedule.every().day.at("19:00", "Europe/Moscow").do(lambda: write_msg(sender='376386974', msg='231231', keyboard=generate_keyboard(VkKeyboard(one_time=True), {'11': VkKeyboardColor.PRIMARY}, 1)))
-
 malingTh = th.Thread(target=maling)
 malingTh.start()
+
 PRIMARY = VkKeyboardColor.PRIMARY
 for event in longpoll.listen():
     if event.type == VkEventType.MESSAGE_NEW and event.to_me:

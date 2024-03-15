@@ -15,7 +15,7 @@ groups_info = {}
 for row in range(6, sheet.max_row - 1):
     if sheet[row][0].value != None:
         group = sheet[row][0].value
-        groups_info[group] = [[],[],[],[],[]]
+        groups_info[group] = [[],[],[],[],[]] # monday-friday
     for coll in range(2, 7):
         current_item = sheet[row][coll].value
         if current_item is not None:
